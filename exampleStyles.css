@@ -1,0 +1,67 @@
+.container{
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+h1{
+    font-family: Comfortaa;
+    padding: 25px 0px 25px 0px;
+}
+
+h2{
+    font-family: Comfortaa;
+    padding: 25px 0px 25px 0px;
+}
+
+h5{
+    margin-left: 20%; 
+    text-align: left;
+    /* margin: auto; */
+}
+p{
+    font-family: Comfortaa;
+}
+
+#initialScreen{
+    display: flex;
+}
+
+#quiz{display: none;
+
+}
+
+#final_result{display: none;
+
+}
+
+/* Button Group */
+.btn-group-vertical{
+font-family: Comfortaa;
+    font-size: 1.8rem;
+    width: 100%;
+    text-align: center;
+    /*border: 0.5rem solid #56a5eb; */
+    text-decoration: none;
+    color: #56a5eb;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    
+}
+
+.btn{
+    border: 1px white;
+    color: red;
+}
+
+#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+  }
