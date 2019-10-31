@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/psy.png" type="image/png">
+    <title>PHQ-15: Somatic Severity Test</title>
+    <link rel="stylesheet" type="text/css" href="exampleStyles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row" id="initialScreen">
+
+            <div class="col-2"></div>
+
+            <div class="col-8 mt-5 mb-5">
+
+                <h1>PHQ-15: Somatic Symptom Severity Test</h1>
+
+                <p>
+                    This is a brief, 15-item questionnaire to screen and monitor somatic symptom severity in clinical practice and research.
+                </p>
+
+                <p>The <a href="https://en.wikipedia.org/wiki/Patient_Health_Questionnaire#15-item_somatic_scale">PHQ-15</a> The Patient Health Questionnaire (PHQ-15) is a somatic symptoms subscale derived from a self- administered version of the Primary Care Evaluation of Mental Disorders (PRIME-MD) diagnostic instrument for common mental disorders </p>
+
+                <div class="btn btn-warning btn-lg mt-1 mb-1" id="startButton">Start test</div>
+                <p style="font-size:10px;">
+                    <a href="mailto:felix@somasketch.com" id="signature">./by-Soma Sketch</a>
+                </p>
+
+                <p>
+                    <span id=colour_red>THIS IS NOT A DIAGNOSIS OF DEPRESSION, ANXIETY NOR STRESS. This tool does not
+                        provide medical advice and it is intended for informational purposes only</span>.
+                </p>
+
+            </div>
+
+            <div class="col-2"></div>
+
+        </div>
+
+        <div class = "row" id = "quiz">
+                <header>
+                    <div id = "testName">PHQ-15: Somatic Symptom Severity Test</div>
+                </header>
+                <div class="col-2">
+                </div>
+                
+                <div class="col-8 mt-5 mb-5">
+    
+                    <h2>Over the last week, how often have you been bothered by...</h2>
+                    
+                    <h2 class = "response mb-3"  id = "showQuestion">questions</h2>
+                    
+                    <div class = "row">
+                       
+                            <button class="button"  id = "r0">Not at all</button>
+                            <button class="button"  id = "r1">Bothered a little</button>
+                            <button class="button"  id = "r2">Bothered a lot</button>
+                        
+                    </div>
+                    <p></p>
+                    <div id="hud">
+                        <div id="hud-item">
+                            <p id="progressText" class="hud-prefix">
+                            Question
+                            </p>
+                            <div id="progressBar">
+                            <div id="progressBarFull"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row">
+                            <ul class="pager">
+                                <a href="#" id = "previous" class = "previous">&laquo;Previous</a>
+                                <a href="#" id = "next" class = "next">&raquo;Next</a>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class = "row" id = "final_result">
+                    <header>
+                        <div id = "testName">PHQ-15: Somatic Symptom Severity Test</div>
+                    </header>
+                <div class="col-2"></div>
+    
+                <div class="col-8 mt-5 mb-5">
+                    <div class = row>
+                        <h1>Your PHQ-15 score is</h1>
+                        <h1 id = "finalScore">score</h1>
+                    </div>
+                    <div class = row>Somatic Symptom Severity Scale</div>
+                    <div class = row>
+                        <div class="row mb-2 justify-content-center">
+                            <span class="border border-success" id="SNormal">Minimal</span>
+                            <span class="border border-warning" id="SMild">Low</span>
+                            <span class="border border-warning" id="SModerate">Medium</span>
+                            <span class="border border-danger" id="SSevere">High</span>
+                        </div>
+                    </div>
+                    <div class = row>
+                        <button type ="button" class = "btn-warning" id ="restart">Restart</button>
+                        <button type ="button" class = "btn-primary" id ="home">Home</button>
+                    </div>
+                </div>
+    
+                <div class="col-2"></div>
+            </div>
+            
+            
+        </div>
+
+        <script src="phq15.js"></script>
+</body>
+
+</html>

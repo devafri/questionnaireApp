@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/psy.png" type="image/png">
+    <title>GAD-7: Anxiety Scale Test</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row" id="initialScreen">
+
+            <div class="col-2"></div>
+
+            <div class="col-8 mt-5 mb-5">
+
+                <h1>GAD-7: General Anxiety Assessment <br>administered by Soma Sketch</h1>
+
+                <p>
+                    This is a brief, 7-item questionnaire to screen and measure of the severity of anxiety symptoms.
+                </p>
+
+                <p>The <a href="https://pdfs.semanticscholar.org/ce87/0c5691ee9021878f2dd8af9f685df6d190c8.pdf">GAD-7</a> The General Anxiety Disorder Screen (GAD-7) is a somatic symptoms subscale derived from a self- administered version of the Primary Care Evaluation of Mental Disorders (PRIME-MD) diagnostic instrument for common mental disorders </p>
+
+                <div class="btn btn-warning btn-lg mt-1 mb-1" id="start">Start test</div>
+                <p style="font-size:10px;">
+                    <a href="mailto:felix@somasketch.com" id="signature">./by-Felix Isuk</a>
+                </p>
+
+                <p>
+                    <span id=colour_red>THIS IS NOT A DIAGNOSIS OF DEPRESSION, ANXIETY NOR STRESS. This tool does not
+                        provide medical advice and it is intended for informational purposes only</span>.
+                </p>
+
+            </div>
+
+            <div class="col-2"></div>
+
+        </div>
+       
+        <div class="row" id="question">
+
+            <div class="col-2"></div>
+
+            <div class="col-8 mt-5 mb-5">
+                <h3 id=timer>00:30</h3>
+                <p>Over the last 2 weeks, how often have you been bothered by the following problems...</p>
+                <h4 class="response mb-3" id="printquestion">questions</h4>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <button class="btn btn-outline-dark btn-block" id="r0">not at all</button>
+                        <button class="btn btn-outline-dark btn-block" id="r1">several days</button>
+                        <button class="btn btn-outline-dark btn-block" id="r2">more than half the days</button>
+                        <button class="btn btn-outline-dark btn-block" id="r3">nearly every day</button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+
+            <div class="col-2"></div>
+
+        </div>
+
+        <div class="row" id="final_results">
+
+            <div class="col-1"></div>
+
+            <div class="col-10 mt-5">
+
+                <h1>Results</h1>
+                
+
+                 <div class="row">
+                    <h5>Depression Scale:</h5>
+                </div>
+
+                <div class="row mb-2 justify-content-center">
+                    <span class="border border-success" id="DNormal">Normal</span>
+                    <span class="border border-warning" id="DMild">Mild</span>
+                    <span class="border border-warning" id="DModerate">Moderate</span>
+                    <span class="border border-danger" id="DSevere">Severe</span>
+                    <span class="border border-danger" id="DExtreme">Extreme</span>
+                </div>
+
+                <div class="row">
+                    <h5>Anxiety Scale:</h5>
+                </div>
+
+                <div class="row mb-2 justify-content-center">
+                    <span class="border border-success" id="ANormal">Normal</span>
+                    <span class="border border-warning" id="AMild">Mild</span>
+                    <span class="border border-warning" id="AModerate">Moderate</span>
+                    <span class="border border-danger" id="ASevere">Severe</span>
+                    <span class="border border-danger" id="AExtreme">Extreme</span>
+                </div>
+
+                <div class="row">
+                    <h5>Stress Scale:</h5>
+                </div>
+                <div class="row mb-2 justify-content-center">
+                    <span class="border border-success" id="SNormal">Normal</span>
+                    <span class="border border-warning" id="SMild">Mild</span>
+                    <span class="border border-warning" id="SModerate">Moderate</span>
+                    <span class="border border-danger" id="SSevere">Severe</span>
+                    <span class="border border-danger" id="SExtreme">Extreme</span>
+                </div>
+
+                <div class="btn btn-primary btn-lg mt-3 mb-3" id="restart">Restart</div>
+
+                <div class="col-1"></div>
+
+            </div>
+
+        </div>
+
+        <script src="experiment.js"></script>
+</body>
+
+</html>
