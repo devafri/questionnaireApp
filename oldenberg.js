@@ -1,17 +1,17 @@
 //These are the Questionnaire questions
 questions = [
-    ['I always find new and interesting aspects in my work'],
-    ['There are days when I feel tired before I arrive at work'],
-    ['It happens more and more often that I talk about my work in a negative way'],
-    ['After work, I tend to need more time than in the past in order to relax and feel better'],
-    ['I can tolerate the pressure of my work very well'],
-    ['Lately, I tend to think less at work and do my job almost mechanically'],
-    ['I find my work to be a positive challenge'],
-    ['During my work, I often feel emotionally drained'],
-    ['Over time, one can become disconnected from this type of work'],
-    ['After working, I have enough energy for my leisure activities'],
-    ['Sometimes I feel sickened by my work tasks'],
-    ['After my work, I usually feel worn out and weary'],
+    ['I always find new and interesting aspects in my work',],
+    ['There are days when I feel tired before I arrive at work','r'],
+    ['It happens more and more often that I talk about my work in a negative way','r'],
+    ['After work, I tend to need more time than in the past in order to relax and feel better','r'],
+    ['I can tolerate the pressure of my work very well',],
+    ['Lately, I tend to think less at work and do my job almost mechanically','r'],
+    ['I find my work to be a positive challenge',],
+    ['During my work, I often feel emotionally drained','r'],
+    ['Over time, one can become disconnected from this type of work','r'],
+    ['After working, I have enough energy for my leisure activities',],
+    ['Sometimes I feel sickened by my work tasks','r'],
+    ['After my work, I usually feel worn out and weary','r'],
     ['This is the only type of work that I can imagine myself doing'],
     ['Usually, I can manage the amount of my work well'],
     ['I feel more and more engaged in my work'],
@@ -23,7 +23,11 @@ const progressBarFull = document.getElementById("progressBarFull");
 const progressText = document.getElementById("progressText");
 totalQuestions = questions.length;
 question = 0;
-var score = 0;
+score = 0;
+disengagement = 0;
+exhaustion = 0;
+reverse = [1,2,3,4,7,10,11];
+dQuestions = [0,2,5,6,8,10,12,14]
 
 //Start test
 $("#startButton").on("click", function () {
@@ -36,8 +40,21 @@ $("#home").on("click", function () {
 
 //Click on Stongly Agree
 $("#r0").on("click", function () {
-    score +=0;
-    console.log(score)
+    //console.log(reverse.includes(question));
+    if(reverse.includes(question) == true){
+        if(dQuestions.includes(question) == true){
+            disengagement +=4;
+        }
+        else{
+            exhaustion +=4;
+        }
+        
+    }
+    else if(dQuestions.includes(question) == true){
+        disengagement +=1;
+    } else{ exhaustion +=1;}
+    console.log("disengagement = " + disengagement);
+    console.log("exhaustion =" + exhaustion);
     question++;
 
     if (question >= questions.length) {
@@ -48,7 +65,8 @@ $("#r0").on("click", function () {
         setTimeout(function () {
             document.getElementById("final_result").style.display = "flex";
         }, 500);
-        document.getElementById("finalScore").innerHTML = score;
+        document.getElementById("disengagementScore").innerHTML = disengagement;
+        document.getElementById("exhaustionScore").innerHTML = exhaustion;
     }
     
     else {
@@ -58,8 +76,20 @@ $("#r0").on("click", function () {
 
 //Click on Agree
 $("#r1").on("click", function () {
-    score +=1;
-    console.log(score)
+    if(reverse.includes(question) == true){
+        if(dQuestions.includes(question) == true){
+            disengagement +=3;
+        }
+        else{
+            exhaustion +=3;
+        }
+        
+    }
+    else if(dQuestions.includes(question) == true){
+        disengagement +=2;
+    } else{ exhaustion +=2;}
+    console.log("disengagement = " + disengagement);
+    console.log("exhaustion =" + exhaustion);
     question++;
 
     if (question >= questions.length) {
@@ -70,7 +100,8 @@ $("#r1").on("click", function () {
         setTimeout(function () {
             document.getElementById("final_result").style.display = "flex";
         }, 500);
-        document.getElementById("finalScore").innerHTML = score;
+        document.getElementById("disengagementScore").innerHTML = disengagement;
+        document.getElementById("exhaustionScore").innerHTML = exhaustion;
     }
     
     else {
@@ -80,19 +111,33 @@ $("#r1").on("click", function () {
 
 //Click on Disagree
 $("#r2").on("click", function () {
-    score +=2;
-    console.log(score)
+    if(reverse.includes(question) == true){
+        if(dQuestions.includes(question) == true){
+            disengagement +=2;
+        }
+        else{
+            exhaustion +=2;
+        }
+        
+    }
+    else if(dQuestions.includes(question) == true){
+        disengagement +=3;
+    } else{ exhaustion +=3;}
+    console.log("disengagement = " + disengagement);
+    console.log("exhaustion =" + exhaustion);
+
     question++;
 
     if (question >= questions.length) {
-        localStorage.setItem('mostRecentScore', score);
+        //localStorage.setItem('mostRecentScore', score);
         document.getElementById("initialScreen").style.display = "none";
         document.getElementById("quiz").style.display = "none";
 
         setTimeout(function () {
             document.getElementById("final_result").style.display = "flex";
         }, 500);
-        document.getElementById("finalScore").innerHTML = score;
+        document.getElementById("disengagementScore").innerHTML = disengagement;
+        document.getElementById("exhaustionScore").innerHTML = exhaustion;
     }
     
     else {
@@ -102,19 +147,32 @@ $("#r2").on("click", function () {
 
 //Click on Strongly disagree
 $("#r3").on("click", function () {
-    score +=3;
-    console.log(score)
+    if(reverse.includes(question) == true){
+        if(dQuestions.includes(question) == true){
+            disengagement +=2;
+        }
+        else{
+            exhaustion +=2;
+        }
+        
+    }
+    else if(dQuestions.includes(question) == true){
+        disengagement +=3;
+    } else{ exhaustion +=3;}
+    console.log("disengagement = " + disengagement);
+    console.log("exhasution =" + exhaustion);
     question++;
 
     if (question >= questions.length) {
-        localStorage.setItem('mostRecentScore', score);
+        //localStorage.setItem('mostRecentScore', score);
         document.getElementById("initialScreen").style.display = "none";
         document.getElementById("quiz").style.display = "none";
 
         setTimeout(function () {
             document.getElementById("final_result").style.display = "flex";
         }, 500);
-        document.getElementById("finalScore").innerHTML = score;
+        document.getElementById("disengagementScore").innerHTML = disengagement;
+        document.getElementById("exhaustionScore").innerHTML = exhaustion;
     }
     
     else {
@@ -124,9 +182,12 @@ $("#r3").on("click", function () {
 });
 
 $("#restart").on("click", function () {
+    disengagement = 0;
+    exhaustion = 0;
     document.getElementById("final_result").style.display = "none";
     document.getElementById("quiz").style.display = "none";
     document.getElementById("initialScreen").style.display = "flex";
+    
 });
 
 
@@ -136,7 +197,9 @@ function GoToHomePage(){
 
 function starttest() {
     question = 0;
-    score = 0;
+    disengagement = 0;
+    exhaustion = 0;
+    progressText.innerText = `Question ${question+1}/${totalQuestions}`;
     event.preventDefault();
     document.getElementById("final_result").style.display = "none";
     document.getElementById("initialScreen").style.display = "none";
@@ -144,13 +207,13 @@ function starttest() {
     setTimeout(function () {
         document.getElementById("quiz").style.display = "flex";
     }, 100);
-    progressText.innerText = `Question ${question+1}/${totalQuestions}`;
+    
 }
 
 function transition_hide() {
     document.getElementById("quiz").style.display = "none";
 
-    $('#showQuestion').text(questions[question]);
+    $('#showQuestion').text(questions[question][0]);
 
     setTimeout(function () {
         document.getElementById("quiz").style.display = "flex";
