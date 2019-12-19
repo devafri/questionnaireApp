@@ -137,6 +137,7 @@ p{
     font-size: 1.8rem;
     padding: 1rem 0;
     width: 10%;
+    min-width: 70px;
     text-align: center;
     border: 0.1rem solid #56a5eb;
     margin-bottom: 1rem;
